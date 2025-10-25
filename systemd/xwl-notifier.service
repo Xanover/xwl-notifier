@@ -1,0 +1,12 @@
+[Unit]
+Description = XWayland Notifier Daemon
+After = graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/xwl_notifier
+Restart=on-failure
+StandardOutput=append:%h/.local/share/xwl_notifier.log
+StandardError=inherit
+
+[Install]
+WantedBy=default.target
